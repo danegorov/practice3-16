@@ -1,5 +1,7 @@
 package com.practice3;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String args[]){
         Circle krug = new Circle();
@@ -23,6 +25,14 @@ public class Main {
         System.out.println("\nLegs:\nhp= " + character.legs.getHp() + '\n' + "speed= " + character.legs.getMaxSpeed());
         character.legs.damage(6);
         System.out.println("\nnLegs (after damage):\nhp= " + character.legs.getHp() + '\n' + "speed= " + character.legs.getMaxSpeed());
+        System.out.println("\n\n\nBOOK----------------------------");
+        Book book = new Book("Edgar", "Black ravaen", "eqwf");
+        book.editPage(43, "ewe");
+        ArrayList<String> pages = book.getPages();
+        for (int i = 0; i < pages.size(); i++){
+            System.out.println(pages.get(i));
+        }
+        System.out.println(book.toString());
 
     }
 }

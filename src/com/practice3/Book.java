@@ -8,10 +8,12 @@ public class Book {
     int year;
 
     Book(String author, String name, String info){
+        pages = new ArrayList<>();
         pages.add(info);
         this.name = name;
     }
     Book(ArrayList<String> pages){
+
         this.pages = pages;
     }
     public void editPage(int i, String info){
@@ -30,6 +32,16 @@ public class Book {
             System.exit(1);
             return "";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "pages=" + pages +
+                ", author='" + author + '\'' +
+                ", name='" + name + '\'' +
+                ", year=" + year +
+                '}';
     }
 
     public String getName() {
