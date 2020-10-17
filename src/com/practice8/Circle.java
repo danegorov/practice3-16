@@ -1,6 +1,8 @@
 package com.practice8;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Circle extends Shape {
     protected double radius;
@@ -19,6 +21,10 @@ public class Circle extends Shape {
         super();
         this.radius = 0;
 
+    }
+    public Circle(Random ran){
+        super(ran);
+        radius = ran.nextInt(50);
     }
     public void setRadius(double radius) {
         this.radius = radius;
@@ -52,7 +58,7 @@ public class Circle extends Shape {
         int x = (int) Math.round(this.x);
         int y = (int) Math.round(this.y);
         int radius = (int) Math.round(this.radius);
+        if (filled) gr.fillOval(x, y, radius+1, radius+1);
         gr.drawOval(x, y, radius, radius);
-        if (filled) gr.fillOval(x, y, radius, radius);
     }
 }

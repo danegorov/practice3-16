@@ -1,6 +1,8 @@
 package com.practice8;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Rectangle extends Shape {
     protected double width, length;
@@ -12,6 +14,12 @@ public class Rectangle extends Shape {
         super(color, filled, x, y);
         this.width = width;
         this.length = length;
+    }
+    public Rectangle(Random ran){
+        super(ran);
+        width = ran.nextInt(30);
+        length = ran.nextInt(25);
+
     }
     public double getWidth() {
         return width;
@@ -56,5 +64,4 @@ public class Rectangle extends Shape {
         gr.drawRect(x, y, width, len);
         if (filled) gr.fillRect(x, y, width, len);
     }
-
 }
