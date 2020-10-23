@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Plot extends JFrame  {
     ArrayList<Shape> shapes;
-    Plot(int count){
+    public Plot(int count){
         shapes = new RandomArrayFactory(count).makeArray();
         setSize(1000, 800);
     }
