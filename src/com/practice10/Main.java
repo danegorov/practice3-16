@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         //four();
         //five();
-        seven(20);
+        seven(500);
 
 
     }
@@ -45,17 +45,18 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         System.out.println(sumdigits(scan.nextInt()));
     }
-    public static int sumdigits(int a){
+    public static int sumdigits(int a) {
         if (a / 10 == 0) return a;
         return a % 10 + sumdigits(a / 10);
     }
     public static void seven(int a){
         boolean[] arr = new boolean[a + 1];
-        System.out.println(arr[3]);
+        arr[0] = true;
+        arr[1] = true;
         for (int i = 2; i <= a; i++){
             if (!arr[i]) {
-                for (int j = i * 2; j <= a; j = i * j) {
-                    arr[j] = true;
+                for (int j = 2; i * j <= a; j++) {
+                    arr[i * j] = true;
                 }
             }
         }

@@ -14,9 +14,10 @@ public class Plot extends JFrame  {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-
-        for (Shape el : shapes){
+        for (Shape el : shapes) {
             el.draw(g);
         }
     }
+
 }
+
