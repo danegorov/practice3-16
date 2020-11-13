@@ -16,7 +16,7 @@ public class Main {
 
             //AnimPlot plt = new AnimPlot(ImageIO.read(new File("src/com/practice8/ball.png")));
 
-        } catch (IOException e) {
+        } catch (Exception e) {
         }
 
     }
