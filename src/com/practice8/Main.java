@@ -14,7 +14,7 @@ public class Main {
             plot.setVisible(true);
 
 
-            AnimPlot plt = new AnimPlot(ImageIO.read(new File("src/com/practice8/ball.png")));
+            //AnimPlot plt = new AnimPlot(ImageIO.read(new File("src/com/practice8/ball.png")));
 
         } catch (IOException e) {
         }
