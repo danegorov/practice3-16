@@ -1,6 +1,4 @@
-package practice12;
-
-import com.practice11.punkt2.StringConverter;
+package com.practice12;
 
 import javax.swing.*;
 import java.awt.*;

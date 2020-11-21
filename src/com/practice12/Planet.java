@@ -1,4 +1,4 @@
-package practice12;
+package com.practice12;
 
 public enum Planet {
     // in mass and radius of earth
