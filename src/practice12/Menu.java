@@ -4,6 +4,8 @@ import com.practice11.punkt2.StringConverter;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Menu extends JFrame {
     Menu() {
@@ -12,7 +14,7 @@ public class Menu extends JFrame {
 
         JTextArea area = new JTextArea();
 
-        Planet[] planets = new Planet[] {
+        Planet[] planet = new Planet[] {
                 Planet.MERCURY,
                 Planet.VENUS,
                 Planet.EARTH,
@@ -22,12 +24,39 @@ public class Menu extends JFrame {
                 Planet.URANUS,
                 Planet.NEPTUNE
         };
+        JComboBox planets = new JComboBox(planet);
 
-        JComboBox planet = new JComboBox(planets);
+        JButton button = new JButton("Рассчитать");
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               int i = planets.getSelectedIndex();
+               float dr = planet[i].getRadius();
+               float mass = 0;
+               try {
+
+                   mass = Float.valueOf(area.getText());
+
+               } catch (NumberFormatException ex) {
+
+                   JOptionPane.showMessageDialog(null, "Ведите данные корректно");
+
+               } finally {
+
+                   double f = 9816243.509 * mass * planet[i].getMass() / (dr * dr);
+                   JOptionPane.showMessageDialog(null, "Сила притяжения равна " + String.format("%.4f", f));
+
+               }
+
+            }
+        });
         JPanel panel = new JPanel(new FlowLayout());
 
         panel.add(area);
-
+        panel.add(planets);
+        panel.add(button);
+        setContentPane(panel);
+        setVisible(true);
     }
 
 }
