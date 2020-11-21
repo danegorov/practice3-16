@@ -1,13 +1,10 @@
-package com.practice11;
-
-import com.practice8.Plot;
+package com.practice11.punkt1;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class MainWindow extends JFrame {
     int digit;
@@ -26,6 +23,7 @@ public class MainWindow extends JFrame {
         input.setColumns(20);
         input.setLocation(200, 200);
         //getContentPane().add(input);
+
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -63,6 +61,6 @@ public class MainWindow extends JFrame {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        
+        System.out.println(BorderLayout.CENTER);
     }
 }
