@@ -41,7 +41,7 @@ public class Menu extends JFrame {
 
                } finally {
 
-                   double f = 9816243.509 * mass * planet[i].getMass() / (dr * dr);
+                   double f = 9.816243509 * mass * planet[i].getMass() / (dr * dr);
                    JOptionPane.showMessageDialog(null, "Сила притяжения равна " + String.format("%.4f", f));
 
                }
