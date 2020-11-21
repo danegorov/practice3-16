@@ -37,14 +37,14 @@ public class Menu extends JFrame {
 
                } catch (NumberFormatException ex) {
 
-                   JOptionPane.showMessageDialog(null, "Ведите данные корректно");
-
-               } finally {
-
-                   double f = 9.816243509 * mass * planet[i].getMass() / (dr * dr);
-                   JOptionPane.showMessageDialog(null, "Сила притяжения равна " + String.format("%.4f", f));
+                   JOptionPane.showMessageDialog(null, "Данные введены некорректно");
+                   return;
 
                }
+
+               double f = 9.816243509 * mass * planet[i].getMass() / (dr * dr);
+               JOptionPane.showMessageDialog(null, "Сила притяжения равна " + String.format("%.4f", f));
+
 
             }
         });
