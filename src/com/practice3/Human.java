@@ -8,7 +8,7 @@ public class Human {
     public Legs legs;
     enum Hands {RightHand, LeftHand};
 
-    Human(){
+    public Human() {
 
     }
 
