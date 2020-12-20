@@ -17,6 +17,9 @@ public class Students {
         this.array = array;
         size = array.size();
     }
+    public  ArrayList<Student> getArr() {
+        return array;
+    }
 
     Students(Student[] arr) {
         array = new ArrayList<>();
@@ -24,7 +27,9 @@ public class Students {
             array.add(el);
         }
     }
-
+    public void set(Student stud, int i) {
+        array.set(i, stud);
+    }
     public void add(Student student) {
 
         array.add(student);
@@ -73,6 +78,11 @@ public class Students {
             }
         }
 
+    }
+
+    public void glue(Students students) {
+        array.addAll(students.getArr());
+        size = size + students.getSize();
     }
 
     public int getSize() {

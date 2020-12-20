@@ -33,7 +33,7 @@ public abstract class SortingStudentsByGPA implements Comporator {
         int n2 = j2 - i2;
 
         Student[] arr1 = new Student[n1];
-        System.out.println(arr1.length);
+
         Student[] arr2 = new Student[n2];
 
 
@@ -41,10 +41,10 @@ public abstract class SortingStudentsByGPA implements Comporator {
             arr1[i] = array[i];
         }
 
-        System.out.println(arr2.length);
+
         for (int i = 0; i < arr2.length; i++) {
             arr2[i] = array[i + arr1.length];
-            System.out.println(array[i]);
+
         }
 
         arr1 = sort(arr1, arr1.length);
@@ -93,6 +93,38 @@ public abstract class SortingStudentsByGPA implements Comporator {
 
         return st;
     }
+    public static Students quickSort(Students students, int start, int end) {
+        if (start >= end || students.get(start).getGPA() >= students.get(end).getGPA() && start + 1 == end) return students;
+        float pivot = students.get(start).getGPA();
+        int i = start + 1;
+        int j = end;
 
+        while(i < j) {
+            while(students.get(i).getGPA() > pivot) {
+                i++;
+            }
+
+            while (students.get(j).getGPA() < pivot) {
+                j--;
+            }
+
+            if (i < j) {
+                Student  buf = students.get(i);
+                students.set(students.get(j), i);
+                students.set(buf, j);
+            }
+
+
+        }
+        if (pivot < students.get(j).getGPA()) {
+            Student buf = students.get(j);
+            students.set(students.get(start), j);
+            students.set(buf, start);
+        }
+
+        students = quickSort(students, start, j);
+        return quickSort(students, j + 1, end);
+
+    }
 
 }
